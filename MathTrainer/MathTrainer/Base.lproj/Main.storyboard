@@ -227,10 +227,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3A6-9Y-KSY">
-                                <rect key="frame" x="50" y="50" width="34" height="30"/>
+                                <rect key="frame" x="313" y="50" width="51" height="28"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="51" id="1Kw-lU-9tN"/>
+                                    <constraint firstAttribute="height" constant="28" id="cXq-CR-Aqv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Back"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="vDv-ah-Taz" kind="unwind" unwindAction="unwindActionWithUnwindSegue:" id="vNS-tJ-hlh"/>
+                                    <segue destination="vDv-ah-Taz" kind="unwind" unwindAction="unwindActionWithUnwindSegue:" id="AIq-ax-MHh"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34 + 53 =" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrT-gh-Xq3">
@@ -283,20 +295,25 @@
                         <constraints>
                             <constraint firstItem="qrT-gh-Xq3" firstAttribute="centerX" secondItem="oHw-uF-bTc" secondAttribute="centerX" id="G3a-rM-GAa"/>
                             <constraint firstItem="SzF-q4-b9e" firstAttribute="centerX" secondItem="oHw-uF-bTc" secondAttribute="centerX" constant="60" id="Jpu-Vz-zJY"/>
+                            <constraint firstItem="5P8-QU-2iU" firstAttribute="trailing" secondItem="3A6-9Y-KSY" secondAttribute="trailing" constant="50" id="MsH-oh-TQN"/>
                             <constraint firstItem="SzF-q4-b9e" firstAttribute="centerY" secondItem="LdP-zE-GjO" secondAttribute="centerY" id="bV7-s7-ydZ"/>
+                            <constraint firstItem="3A6-9Y-KSY" firstAttribute="top" secondItem="5P8-QU-2iU" secondAttribute="top" constant="50" id="fSa-uo-ZzR"/>
                             <constraint firstItem="LdP-zE-GjO" firstAttribute="centerX" secondItem="oHw-uF-bTc" secondAttribute="centerX" constant="-60" id="fqE-Zb-DOZ"/>
                             <constraint firstItem="LdP-zE-GjO" firstAttribute="top" secondItem="qrT-gh-Xq3" secondAttribute="bottom" constant="120" id="hiQ-Qf-dwu"/>
                             <constraint firstItem="qrT-gh-Xq3" firstAttribute="centerY" secondItem="oHw-uF-bTc" secondAttribute="centerY" constant="-30" id="uA9-8a-3OP"/>
-                            <constraint firstItem="3A6-9Y-KSY" firstAttribute="leading" secondItem="5P8-QU-2iU" secondAttribute="leading" constant="50" id="vc9-FK-xnq"/>
                             <constraint firstItem="3A6-9Y-KSY" firstAttribute="top" secondItem="5P8-QU-2iU" secondAttribute="top" constant="50" id="x7b-hO-vl9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Rlr-V1-YBu"/>
+                    <connections>
+                        <outletCollection property="buttonsCollection2" destination="LdP-zE-GjO" collectionClass="NSMutableArray" id="Mo2-Zz-uXY"/>
+                        <outletCollection property="buttonsCollection2" destination="SzF-q4-b9e" collectionClass="NSMutableArray" id="UOx-fD-tHP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0o-pM-aTN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="vDv-ah-Taz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="474" y="65"/>
+            <point key="canvasLocation" x="473.91304347826093" y="64.955357142857139"/>
         </scene>
     </scenes>
     <resources>

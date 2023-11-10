@@ -14,4 +14,20 @@ final class TrainViewController: UIViewController {
             print(type)
         }
     }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureButtons2()
+    }
+    
+    @IBOutlet var buttonsCollection2: [UIButton]!
+    
+    private func configureButtons2() {
+        // add shadow
+        buttonsCollection2.forEach { button in
+            button.layer.shadowColor = UIColor.darkGray.cgColor
+            button.layer.shadowOffset = CGSize(width: 0, height: 2)
+            button.layer.shadowOpacity = 0.4
+            button.layer.shadowRadius = 3
+        }
+}
 }
