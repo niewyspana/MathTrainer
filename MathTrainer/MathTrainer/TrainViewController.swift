@@ -89,7 +89,7 @@ final class TrainViewController: UIViewController {
         var randomAnswer: Int
         repeat {
             randomAnswer = Int.random(in: (answer - 10)...(answer + 10))
-        } while randomAnswer == answer
+        } while (firstNumber % secondNumber != 0) || randomAnswer == answer
         
         rightButton.setTitle(isRightButton ? String(answer) : String(randomAnswer), for: .normal)
         leftButton.setTitle(isRightButton ? String(randomAnswer) : String(answer), for: .normal)
@@ -97,7 +97,13 @@ final class TrainViewController: UIViewController {
     
     private func  configureQuestion() {
         firstNumber = Int.random(in: 1...99)
-        secondNumber = Int.random(in: 1...99)
+        secondNumber = Int.random(in: 1...firstNumber)
+        
+        while firstNumber % secondNumber != 0 {
+            firstNumber = Int.random(in: 1...99)
+            secondNumber = Int.random(in: 1...firstNumber)
+        }
+        
         let question: String = "\(firstNumber) \(sign) \(secondNumber) ="
         questionLabel.text = question
     }
