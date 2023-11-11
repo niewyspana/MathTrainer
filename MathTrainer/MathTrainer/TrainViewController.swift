@@ -55,7 +55,7 @@ final class TrainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureQuestion()
-        configureButtons2()
+        configureButtons()
     }
     
     @IBOutlet var buttonsCollection2: [UIButton]!
@@ -73,7 +73,7 @@ final class TrainViewController: UIViewController {
     }
     
     // MARK: - Methods
-    private func configureButtons2() {
+    private func configureButtons() {
         let buttonsArray = [leftButton, rightButton]
         buttonsArray.forEach { button in
             button?.backgroundColor = .systemYellow
@@ -119,7 +119,7 @@ final class TrainViewController: UIViewController {
             count += isSecondAttempt ? 0 : 1
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
                 self?.configureQuestion()
-                self?.configureButtons2()
+                self?.configureButtons()
             }
         }
     }
