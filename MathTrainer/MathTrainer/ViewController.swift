@@ -21,14 +21,14 @@ class ViewController: UIViewController {
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
         configureButtons()
     }
+    
     // MARK: - Actions
     @IBAction func buttonsAction(_ sender: UIButton) {
         selectedType = MathTypes(rawValue: sender.tag) ?? .add
         performSegue(withIdentifier: "goToNext", sender: sender)
-        // let type: MathTypes? = MathTypes(rawValue: sender.tag)
     }
     
     @IBAction func unwindAction(unwindSegue: UIStoryboardSegue) { }
@@ -39,6 +39,7 @@ class ViewController: UIViewController {
             viewController.type = selectedType
         }
     }
+    
     private func configureButtons() {
         // add shadow
         buttonsCollection.forEach { button in
@@ -48,6 +49,4 @@ class ViewController: UIViewController {
             button.layer.shadowRadius = 3
         }
     }
-
 }
-
