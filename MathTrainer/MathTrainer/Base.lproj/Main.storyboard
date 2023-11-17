@@ -311,8 +311,6 @@
                         <outlet property="leftButton" destination="LdP-zE-GjO" id="6UG-EA-r1x"/>
                         <outlet property="questionLabel" destination="qrT-gh-Xq3" id="nO6-yX-nWU"/>
                         <outlet property="rightButton" destination="SzF-q4-b9e" id="wA0-PK-MR8"/>
-                        <outletCollection property="buttonsCollection2" destination="LdP-zE-GjO" collectionClass="NSMutableArray" id="Mo2-Zz-uXY"/>
-                        <outletCollection property="buttonsCollection2" destination="SzF-q4-b9e" collectionClass="NSMutableArray" id="UOx-fD-tHP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0o-pM-aTN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

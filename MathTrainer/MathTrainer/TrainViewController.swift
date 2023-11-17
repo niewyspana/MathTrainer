@@ -14,16 +14,14 @@ final class TrainViewController: UIViewController {
     @IBOutlet weak var rightButton: UIButton!
     
     // MARK: - Properties
-
     private var firstNumber = 0
     private var secondNumber = 0
     private var sign: String = ""
     private var count: Int = 0 {
-    didSet {
-        print("Count: \(count)")
+        didSet {
+            print("Count: \(count)")
+        }
     }
-}
-    
     var type: MathTypes = .add {
         didSet {
             switch type {
@@ -50,31 +48,27 @@ final class TrainViewController: UIViewController {
             return firstNumber / secondNumber
         }
     }
-        
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureButtonsUI()
         configureQuestion()
-        configureButtons()
+        configureButtonsAnswers()
     }
-    
-    @IBOutlet var buttonsCollection2: [UIButton]!
     
     // MARK: - IBActions
     @IBAction func leftAction(_ sender: UIButton) {
-        check(answer: sender.titleLabel?.text ?? "",
-              for: sender)
+        check(answer: sender.titleLabel?.text ?? "", for: sender)
     }
     
     @IBAction func rightAction(_ sender: UIButton) {
-        check(answer: sender.titleLabel?.text ?? "",
-              for: sender)
-
+        check(answer: sender.titleLabel?.text ?? "", for: sender)
     }
     
     // MARK: - Methods
-    private func configureButtons() {
-        let buttonsArray = [leftButton, rightButton]
+    private func configureButtonsUI() {   let buttonsArray = [leftButton, rightButton]
         buttonsArray.forEach { button in
             button?.backgroundColor = .systemYellow
         }
@@ -85,6 +79,9 @@ final class TrainViewController: UIViewController {
             button?.layer.shadowOpacity = 0.4
             button?.layer.shadowRadius = 3
         }
+    }
+    
+    private func configureButtonsAnswers() {
         let isRightButton = Bool.random()
         var randomAnswer: Int
         repeat {
@@ -107,6 +104,7 @@ final class TrainViewController: UIViewController {
         let question: String = "\(firstNumber) \(sign) \(secondNumber) ="
         questionLabel.text = question
     }
+    
     private func check(answer: String, for button: UIButton) {
         let isRightAnswer = Int(answer) == self.answer
         
@@ -115,11 +113,11 @@ final class TrainViewController: UIViewController {
         if isRightAnswer {
             let isSecondAttempt = rightButton.backgroundColor == .red ||
                 leftButton.backgroundColor == .red
-           
+            
             count += isSecondAttempt ? 0 : 1
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
                 self?.configureQuestion()
-                self?.configureButtons()
+                self?.configureButtonsAnswers()
             }
         }
     }
