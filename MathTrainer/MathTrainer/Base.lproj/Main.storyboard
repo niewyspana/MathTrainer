@@ -188,6 +188,13 @@
                                     <constraint firstAttribute="trailing" secondItem="ykW-Ec-0rw" secondAttribute="trailing" id="u4E-w8-rfX"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7h-eI-g5h">
+                                <rect key="frame" x="184" y="802" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="clearAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kb7-Ex-FKd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -196,6 +203,8 @@
                             <constraint firstItem="zuK-jz-qtT" firstAttribute="centerX" secondItem="z9D-b1-dN7" secondAttribute="centerX" id="1Kz-cU-9M8"/>
                             <constraint firstItem="z9D-b1-dN7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="60" id="6Q4-kZ-QeW"/>
                             <constraint firstItem="xaU-0g-gSD" firstAttribute="top" secondItem="zaF-D4-cdw" secondAttribute="bottom" constant="40" id="Ed0-e0-crs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="D7h-eI-g5h" secondAttribute="bottom" constant="30" id="Gs9-Ed-hTT"/>
+                            <constraint firstItem="D7h-eI-g5h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JhM-Tz-6O0"/>
                             <constraint firstItem="xaU-0g-gSD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LXL-0Q-68P"/>
                             <constraint firstItem="zaF-D4-cdw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ME3-O4-hQq"/>
                             <constraint firstItem="z9D-b1-dN7" firstAttribute="centerY" secondItem="xaU-0g-gSD" secondAttribute="centerY" id="OgW-h1-oFt"/>
@@ -207,6 +216,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addCountLabel" destination="qjM-yD-4it" id="Gw3-8E-OYm"/>
+                        <outlet property="divideCountLabel" destination="WIV-vJ-Kho" id="n2a-CE-dXP"/>
+                        <outlet property="multiplyCountLabel" destination="x8C-ug-cfn" id="Adj-lF-YSN"/>
+                        <outlet property="subtractCountLabel" destination="Xks-kk-FpE" id="Gcp-aV-vhT"/>
                         <outletCollection property="buttonsCollection" destination="NrX-ve-t6c" collectionClass="NSMutableArray" id="vRE-gF-fJi"/>
                         <outletCollection property="buttonsCollection" destination="blI-tj-gZF" collectionClass="NSMutableArray" id="eTh-Gw-xAo"/>
                         <outletCollection property="buttonsCollection" destination="W9b-ti-pVK" collectionClass="NSMutableArray" id="8ZH-60-t0v"/>
@@ -216,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-500" y="65"/>
+            <point key="canvasLocation" x="-500.00000000000006" y="64.955357142857139"/>
         </scene>
         <!--Train View Controller-->
         <scene sceneID="UIk-iK-Q2y">

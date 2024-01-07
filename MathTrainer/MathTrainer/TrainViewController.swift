@@ -20,6 +20,7 @@ final class TrainViewController: UIViewController {
     private var count: Int = 0 {
         didSet {
             print("Count: \(count)")
+            UserDefaults.standard.set(count, forKey: type.key)
         }
     }
     var type: MathTypes = .add {
@@ -56,6 +57,10 @@ final class TrainViewController: UIViewController {
         configureButtonsUI()
         configureQuestion()
         configureButtonsAnswers()
+        
+        if let count = UserDefaults.standard.object(forKey: type.key) as? Int {
+            self.count = count
+        }
     }
     
     // MARK: - IBActions
@@ -113,8 +118,8 @@ final class TrainViewController: UIViewController {
         if isRightAnswer {
             let isSecondAttempt = rightButton.backgroundColor == .red ||
                 leftButton.backgroundColor == .red
-            
             count += isSecondAttempt ? 0 : 1
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
                 self?.configureQuestion()
                 self?.configureButtonsAnswers()
